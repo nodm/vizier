@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "Vizier Chrome extension",
   "version": "1.0.0",
+  "permissions": ["scripting", "sidePanel"],
   "action": {
     "default_popup": "index.html",
     "default_icon": {
@@ -10,6 +11,14 @@
       "48": "images/icon48.png",
       "128": "images/icon128.png"
     }
+  },
+  "background": {
+    "service_worker": "src/service-worker.ts",
+    "type": "module",
+    "persistent": false
+  },
+  "side_panel": {
+    "default_path": "index.html"
   },
   "icons": {
     "16": "images/icon16.png",
